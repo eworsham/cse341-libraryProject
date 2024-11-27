@@ -4,8 +4,11 @@ const mongodb = require('./data/database');
 const swaggerUI = require('swagger-ui-express')
 const swaggerDocument = require('./swagger-output.json')
 const swaggerDocumentDev = require('./swagger-output-dev.json')
+const bodyParser = require('body-parser')
 
 const PORT = process.env.PORT || 3000;
+
+app.use(bodyParser.json())
 
 // Swagger Middleware
 if (process.env.DEV == 'true') {
