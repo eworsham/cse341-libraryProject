@@ -36,6 +36,7 @@ const createBook = async (req, res) => {
     const result = await mongodb.getDatabase().db().collection('books').insertOne(book)
 
     if (result.acknowledged) {
+        res.setHeader('Content-Type', 'application/json');
         res.status(201).json({
             id: result.insertedId
         })

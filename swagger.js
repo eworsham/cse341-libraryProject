@@ -7,7 +7,20 @@ const docDev = {
         description: 'Library API for books and users'
     },
     host: 'localhost:3000',
-    schemes: ["http"]
+    schemes: ["http"],
+    definitions: {
+        CreateUser: {
+            first_name: "First Name",
+            last_name: "Last Name",
+            phone_number: "111-111-1111",
+            member_since: "2024",
+            books_checked_out: [
+                {
+                    bookId: "6747b53a48dfb390a744fae7"
+                }
+            ]
+        }
+    }
 }
 
 const outputFileDev = './swagger-output-dev.json'
@@ -22,7 +35,20 @@ const doc = {
         description: 'Library API for books and users'
     },
     host: 'cse341-libraryproject.onrender.com',
-    schemes: ["https"]
+    schemes: ["https"],
+    definitions: {
+        CreateUser: {
+            first_name: "First Name",
+            last_name: "Last Name",
+            phone_number: "111-111-1111",
+            member_since: "2024",
+            books_checked_out: [
+                {
+                    bookId: "6747b53a48dfb390a744fae7"
+                }
+            ]
+        }
+    }
 }
 
 const outputFile = './swagger-output.json'
