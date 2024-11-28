@@ -307,6 +307,72 @@
           }
         }
       }
+    },
+    "/libraryProcesses/checkoutBook": {
+      "put": {
+        "tags": [
+          "Library Processes"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "example": "any"
+                },
+                "bookId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/libraryProcesses/returnBook": {
+      "put": {
+        "tags": [
+          "Library Processes"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "example": "any"
+                },
+                "bookId": {
+                  "example": "any"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -334,7 +400,7 @@
           "items": {
             "type": "object",
             "properties": {
-              "bookId": {
+              "book_id": {
                 "type": "string",
                 "example": "6747b53a48dfb390a744fae7"
               }

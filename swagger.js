@@ -16,7 +16,7 @@ const docDev = {
             member_since: "2024",
             books_checked_out: [
                 {
-                    bookId: "6747b53a48dfb390a744fae7"
+                    book_id: "6747b53a48dfb390a744fae7"
                 }
             ]
         }
@@ -44,7 +44,7 @@ const doc = {
             member_since: "2024",
             books_checked_out: [
                 {
-                    bookId: "6747b53a48dfb390a744fae7"
+                    book_id: "6747b53a48dfb390a744fae7"
                 }
             ]
         }
