@@ -18,6 +18,9 @@ const getAll = async (req, res) => {
 const getById = async (req, res) => {
   //#swagger.tags=['Users']
   try {
+    if (!ObjectId.isValid(req.params.id)) {
+      res.status(400).send({ message: 'Must use a valid user id to find a user'})
+    }
     const userId = new ObjectId(req.params.id);
     const result = await mongodb.getDatabase().db().collection('users').find({ _id: userId });
     result.toArray().then((users) => {
@@ -57,6 +60,9 @@ const updateUser = async (req, res) => {
         in: 'body',
         schema: { $ref: "#/definitions/CreateUser" }
     } */
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json({ message: 'Must use a valid user id to update a user'})
+  }
   const userId = new ObjectId(req.params.id);
   const user = {
     first_name: req.body.first_name,
@@ -81,6 +87,9 @@ const updateUser = async (req, res) => {
 
 const deleteUser = async (req, res) => {
   //#swagger.tags=['Users']
+  if (!ObjectId.isValid(req.params.id)) {
+    res.status(400).json({ message: 'Must use a valid user id to delete a user'})
+  }
   const userId = new ObjectId(req.params.id);
   const result = await mongodb.getDatabase().db().collection('users').deleteOne({ _id: userId });
 

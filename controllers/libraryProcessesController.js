@@ -4,6 +4,12 @@ const ObjectId = require('mongodb').ObjectId;
 const checkoutBook = async (req, res) => {
   try {
     //#swagger.tags=['Library Processes']
+    if (!ObjectId.isValid(req.body.userId)) {
+      res.status(400).json({ message: 'Must use a valid user id for user to checkout book'})
+    }
+    if (!ObjectId.isValid(req.body.bookId)) {
+      res.status(400).json({ message: 'Must use a valid book id for user to checkout book'})
+    }
     const userId = new ObjectId(req.body.userId);
     const bookId = new ObjectId(req.body.bookId);
 
@@ -58,6 +64,12 @@ const checkoutBook = async (req, res) => {
 const returnBook = async (req, res) => {
   try {
     //#swagger.tags=['Library Processes']
+    if (!ObjectId.isValid(req.body.userId)) {
+      res.status(400).json({ message: 'Must use a valid user id for user to return book'})
+    }
+    if (!ObjectId.isValid(req.body.bookId)) {
+      res.status(400).json({ message: 'Must use a valid book id for user to return book'})
+    }
     const userId = new ObjectId(req.body.userId);
     const bookId = new ObjectId(req.body.bookId);
 
