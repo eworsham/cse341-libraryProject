@@ -52,7 +52,7 @@ const createUser = (req, res, next) => {
     first_name: 'required|string',
     last_name: 'required|string',
     phone_number: 'required|string',
-    member_since: 'required|integer'
+    member_since: 'required|string'
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {
@@ -72,7 +72,7 @@ const updateUser = (req, res, next) => {
     first_name: 'required|string',
     last_name: 'required|string',
     phone_number: 'required|string',
-    member_since: 'required|integer',
+    member_since: 'required|string',
     books_checked_out: 'required|array'
   };
   validator(req.body, validationRule, {}, (err, status) => {

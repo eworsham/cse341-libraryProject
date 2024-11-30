@@ -13,7 +13,7 @@ const docDev = {
       first_name: 'First Name',
       last_name: 'Last Name',
       phone_number: '111-111-1111',
-      member_since: '2024',
+      member_since: '01-01-2020',
       books_checked_out: [
         {
           book_id: '6747b53a48dfb390a744fae7'
@@ -41,7 +41,7 @@ const doc = {
       first_name: 'First Name',
       last_name: 'Last Name',
       phone_number: '111-111-1111',
-      member_since: '2024',
+      member_since: '01-01-2020',
       books_checked_out: [
         {
           book_id: '6747b53a48dfb390a744fae7'

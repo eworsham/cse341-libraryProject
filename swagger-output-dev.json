@@ -403,7 +403,7 @@
         },
         "member_since": {
           "type": "string",
-          "example": "2024"
+          "example": "01-01-2020"
         },
         "books_checked_out": {
           "type": "array",
