@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const usersController = require('../controllers/usersController');
 const validation = require('../middleware/validate');
-const auth = require('../middleware/authenticate')
+const auth = require('../middleware/authenticate');
 
 router.get('/', usersController.getAll);
 router.get('/:id', usersController.getById);
